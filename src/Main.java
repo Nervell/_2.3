@@ -1,29 +1,23 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-
-        Car[] cars = {new Car("car1", 4),
-                new Car("car2", 4)};
-        Truck[] trucks = {new Truck("truck1", 6),
-                new Truck("truck2", 8)};
-        Bicycle[] bicycles = {new Bicycle("bicycle1", 2),
-                new Bicycle("bicycle2", 2)};
-
-
         ServiceStation station = new ServiceStation();
-        printReport(cars, trucks, bicycles, station);
+
+        ArrayList<Transport> transports = new ArrayList<>();
+        transports.add(new Car("car1", 4));
+        transports.add(new Car("car2", 4));
+        transports.add(new Truck("truck1", 6));
+        transports.add(new Truck("truck2", 6));
+        transports.add(new Bicycle("bicycle1", 2));
+        transports.add(new Bicycle("bicycle2", 2));
+
+        printReport(transports, station);
     }
 
-    private static void printReport(Car[] cars, Truck[] trucks, Bicycle[] bicycles, ServiceStation station) {
-        for (Car car : cars) {
-            station.check(car);
-        }
-
-        for (Truck truck : trucks) {
-            station.check(truck);
-        }
-
-        for (Bicycle bicycle : bicycles) {
-            station.check(bicycle);
+    private static void printReport(ArrayList<Transport> transports, ServiceStation station) {
+        for (Transport transport : transports) {
+            station.check(transport);
         }
     }
 }
