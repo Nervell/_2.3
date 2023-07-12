@@ -2,8 +2,6 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        ServiceStation station = new ServiceStation();
-
         ArrayList<Transport> transports = new ArrayList<>();
         transports.add(new Car("car1", 4));
         transports.add(new Car("car2", 4));
@@ -12,12 +10,12 @@ public class Main {
         transports.add(new Bicycle("bicycle1", 2));
         transports.add(new Bicycle("bicycle2", 2));
 
-        printReport(transports, station);
+        printReport(transports);
     }
 
-    private static void printReport(ArrayList<Transport> transports, ServiceStation station) {
+    private static void printReport(ArrayList<Transport> transports) {
         for (Transport transport : transports) {
-            station.check(transport);
+            transport.check();
         }
     }
 }

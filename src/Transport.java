@@ -1,8 +1,6 @@
-public abstract class Transport {
+public abstract class Transport implements Interface {
     private String modelName;
     private int wheelsCount;
-
-    public abstract void check(Transport transport);
 
     public Transport(String modelName, int wheelsCount) {
         this.modelName = modelName;

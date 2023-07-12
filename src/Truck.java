@@ -5,25 +5,25 @@ public class Truck extends Transport {
     }
 
     @Override
-    public void check(Transport transport) {
-        if (transport != null) {
-            System.out.println(transport.getModelName() + " is in the service");
-            for (int i = 0; i < transport.getWheelsCount(); i++) {
-                ((Truck) transport).updateTyre();
+    public void check() {
+        if (getModelName() != null) {
+            System.out.println(getModelName() + " is in the service");
+            for (int i = 0; i < getWheelsCount(); i++) {
+                updateTruckTyre();
             }
-            ((Truck) transport).checkEngine();
-            ((Truck) transport).checkTrailer();
+            checkTruckEngine();
+            checkTruckTrailer();
         }
     }
-    public void updateTyre() {
+    public void updateTruckTyre() {
         System.out.println("Needs tires change");
     }
 
-    public void checkEngine() {
+    public void checkTruckEngine() {
         System.out.println("Checking engine");
     }
 
-    public void checkTrailer() {
+    public void checkTruckTrailer() {
         System.out.println("Checking trailer");
     }
 

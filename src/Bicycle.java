@@ -5,15 +5,15 @@ public class Bicycle extends Transport {
     }
 
     @Override
-    public void check(Transport transport) {
-        if (transport != null) {
-            System.out.println(transport.getModelName() + " is in the service");
-            for (int i = 0; i < transport.getWheelsCount(); i++) {
-                ((Bicycle) transport).updateTyre();
+    public void check() {
+        if (getModelName() != null) {
+            System.out.println(getModelName() + " is in the service");
+            for (int i = 0; i < getWheelsCount(); i++) {
+                updateBicycleTyre();
             }
         }
     }
-    public void updateTyre() {
+    public void updateBicycleTyre() {
         System.out.println("Needs tires change");
     }
 

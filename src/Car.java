@@ -3,20 +3,20 @@ public class Car extends Transport {
         super(modelName, wheelsCount);
     }
     @Override
-    public void check(Transport transport) {
-        if (transport != null) {
-            System.out.println(transport.getModelName() + " is in the service");
-            for (int i = 0; i < transport.getWheelsCount(); i++) {
-                ((Car) transport).updateTyre();
+    public void check() {
+        if (getModelName() != null) {
+            System.out.println(getModelName() + " is in the service");
+            for (int i = 0; i < getWheelsCount(); i++) {
+                updateCarTyre();
             }
-            ((Car) transport).checkEngine();
+            checkCarEngine();
         }
     }
-    public void updateTyre() {
+    public void updateCarTyre() {
         System.out.println("Needs tires change");
     }
 
-    public void checkEngine() {
+    public void checkCarEngine() {
         System.out.println("Checking engine");
     }
 }
